@@ -26,7 +26,7 @@ def run_tracker(model_name, source):
                 right_shoulder = kp[right_shoulder_idx]
                 right_elbow = kp[right_elbow_idx]
 
-                if right_elbow[1] < right_shoulder[1]:  # If elbow is above the shoulder
+                if right_elbow[1] < right_shoulder[1] and right_elbow[1] != 0:  # If elbow is detected above the shoulder
                     # Draw a line from shoulder to elbow
                     cv2.line(frame, tuple(right_shoulder.astype(int)), tuple(right_elbow.astype(int)), (0, 0, 255), 3)
         # Display the frame
