@@ -1,2 +1,2 @@
-# ViolinPoseTracker
-A vision-based system that extracts 2D pose keypoints from a violinist's video to track right-hand and wrist motion, analyzing bowing technique consistency.
+# PoseTrackerEditor
+A vision-based system that extracts 2D pose keypoints from a violinist's video or Webcam to track right-hand and wrist motion, highlighting when the right elbow moves above the right shoulder.
