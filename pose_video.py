@@ -41,7 +41,7 @@ def run_tracker(model_name, input_video, output_video):
                 right_shoulder = kp[right_shoulder_idx]
                 right_elbow = kp[right_elbow_idx]
 
-                if right_elbow[1] < right_shoulder[1]:  # If elbow is above the shoulder
+                if right_elbow[1] < right_shoulder[1] and right_elbow[1] != 0:  # If elbow is detected and is above the shoulder
                     # Draw a red line from shoulder to elbow
                     cv2.line(frame, tuple(right_shoulder.astype(int)), tuple(right_elbow.astype(int)), (0, 0, 255), 3)
 
@@ -54,4 +54,4 @@ def run_tracker(model_name, input_video, output_video):
     print(f"Processing finished. Video saved as {output_video}")
 
 # Run the tracker on a video file and save output
-run_tracker("yolo11n-pose.pt", "violin.mp4", "violin_output_video.mp4")
+run_tracker("yolo11n-pose.pt", "violinist.mp4", "violinist_pose_video_output.mp4")
